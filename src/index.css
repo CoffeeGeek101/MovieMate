@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'forLOGO';
+  src: url(../public/assets/Thalib\ Textured.ttf);
+}
+
+@font-face {
+  font-family: 'primary-bold';
+  src: url(../public/assets/Comfortaa-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'primary-regular';
+  src: url(../public/assets/Comfortaa-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'primary-light';
+  src: url(../public/assets/Comfortaa-Light.ttf);
+}
+
+
+*{
+  margin: 0;
+}
+
+.App{
+  padding: 20px;
+}
+
+.main-logo{
+  text-shadow: 1px 1px 30px #ffffff7c;
+  font-family: forLOGO;
+}
+
+.topbar{
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
