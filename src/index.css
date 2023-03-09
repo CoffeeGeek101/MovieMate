@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'forLOGO';
-  src: url(../public/assets/Thalib\ Textured.ttf);
+  src: url(/assets/Thalib\ Textured.ttf);
 }
 
 @font-face {
   font-family: 'primary-bold';
-  src: url(../public/assets/Comfortaa-Bold.ttf);
+  src: url(/assets/Comfortaa-Bold.ttf);
 }
 
 @font-face {
   font-family: 'primary-regular';
-  src: url(../public/assets/Comfortaa-Regular.ttf);
+  src: url(/assets/Comfortaa-Regular.ttf);
 }
 
 @font-face {
   font-family: 'primary-light';
-  src: url(../public/assets/Comfortaa-Light.ttf);
+  src: url(/assets/Comfortaa-Light.ttf);
 }
 
 
