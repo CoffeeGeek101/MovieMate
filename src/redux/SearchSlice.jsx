@@ -1,5 +1,9 @@
+// We are creating the reducers and actions for our global variables here using createSlice method
+
 import { createSlice } from "@reduxjs/toolkit";
 
+
+// this is the initial state of the search payload.
 const initial_state = {
     result : [],
     totalResult : 0,
@@ -8,11 +12,15 @@ const initial_state = {
     isFetching : false
 }
 
+// this is the slice for search, that contains all the reducers and action required for it
 const serachSlice = createSlice({
-    name: "search",
+    // just to refer the slice 
+    name: "serachSlice",
     initialState : initial_state,
+    // creates the reducers and actions in the same time (RTK feature)
     reducers : {
         fetchingSearch : (state) => {
+            // we are immutablely updating the state, as we are making a copy and then adding the changes to it
             return{
                 ...state,
                 isFetching : true,
@@ -21,10 +29,10 @@ const serachSlice = createSlice({
         fetchedSearchData : (state, action) => {
             return {
                 ...state,
-                result : action.payload.result,
-                totalResult : action.payload.total_result,
+                result : action.payload.results,
+                totalResult : action.payload.total_results,
                 page : action.payload.page,
-                totalPage : action.payload.total_page,
+                totalPage : action.payload.total_pages,
                 isFetching : false,
             };
         },
