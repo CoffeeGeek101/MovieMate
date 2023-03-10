@@ -25,4 +25,17 @@ export default class TMDB_API {
         )
         return res.json();
     }
+    getTrendingMovies = async() =>{
+        const res = await fetch(
+            `${this.baseURL}/trending/movie/day?api_key=${this.apiKey}`
+        )
+        return res.json();
+    }
+
+    // getWatchProvider = async (movieID) => {
+    //     const res = await fetch(
+    //         `https://api.themoviedb.org/3/movie/${movieID}/watch/providers?api_key=${this.apiKey}`
+    //     )
+    //     return res.json(); 
+    // }
 }
