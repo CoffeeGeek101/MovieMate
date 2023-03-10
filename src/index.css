@@ -3,20 +3,6 @@
   src: url(/assets/Thalib\ Textured.ttf);
 }
 
-@font-face {
-  font-family: 'primary-bold';
-  src: url(/assets/Comfortaa-Bold.ttf);
-}
-
-@font-face {
-  font-family: 'primary-regular';
-  src: url(/assets/Comfortaa-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'primary-light';
-  src: url(/assets/Comfortaa-Light.ttf);
-}
 
 
 *{
@@ -28,7 +14,7 @@
 }
 
 .main-logo{
-  text-shadow: 1px 1px 30px #ffffff7c;
+  text-shadow: 1px 1px 30px #ffffff43;
   font-family: forLOGO;
 }
 
