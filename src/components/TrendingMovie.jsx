@@ -1,14 +1,10 @@
-// import React, { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import './component.css'
-import { API_KEY, Base_URL } from '../credConfig'
+import { Base_URL } from '../credConfig'
 import { TrendingUp } from '@mui/icons-material'
 import { Tooltip } from '@mui/material'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { fetchingWatchProvider, resetWatchProvider } from '../redux/WatchProviderSlice'
 
 export default function TrendingMovie({trendMovie}) {
-
-  console.log(trendMovie.results)
 
   return (
     <div className='trending-wrapper'>

@@ -3,6 +3,8 @@
 // TMDB_API class which has a constructor which takes the API_KEY as an argument, will be adding the 
 // various end-point as function of this class so that we can use them with redux-saga.
 
+import { Base_Provider_URL } from "../credConfig";
+
 export default class TMDB_API {
     baseURL = "https://api.themoviedb.org/3";
     apiKey;
@@ -32,10 +34,11 @@ export default class TMDB_API {
         return res.json();
     }
 
-    // getWatchProvider = async (movieID) => {
-    //     const res = await fetch(
-    //         `https://api.themoviedb.org/3/movie/${movieID}/watch/providers?api_key=${this.apiKey}`
-    //     )
-    //     return res.json(); 
-    // }
+    
+    getWatchProvider = async (movieID) => {
+        const res = await fetch(
+            `${Base_Provider_URL}/movie/${movieID}/watch/providers?api_key=${this.apiKey}`
+        )
+        return res.json(); 
+    }
 }
