@@ -18,12 +18,14 @@ export default function PopularMovies() {
   },[dispatch]);
 
   const {trending} = useSelector((state)=>state);
+  const {genre} = useSelector((state)=>state.genre);
   // console.log(trending.results);
+  // console.log(genre)
 
   return (
     <div className='movie-wrapper'>
-      <TrendingMovie trendMovie = {trending} />
-      <HeroSection />
+      <TrendingMovie trendMovie = {trending}/>
+      <HeroSection trendMovie = {trending} genres={genre}/>
     </div>
   )
 }

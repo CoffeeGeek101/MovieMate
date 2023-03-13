@@ -7,13 +7,11 @@ import { fetchingSearch} from '../redux/SearchSlice'
 import Downshift from 'downshift'
 import './component.css';
 import {Base_URL} from '../credConfig';
-import { current } from '@reduxjs/toolkit'
 import { genreData } from '../lib/helper'
 // import { genreData } from '../lib/helper'
 
 // This component will dispatch all the action or the additional options(payload) for search to the reducer.
 export default function SearchBar({movies, genres}) {
-
 // This will dispatch the payload, it is a react-redux hook
 const dispatch = useDispatch();
 
