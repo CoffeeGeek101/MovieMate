@@ -19,15 +19,6 @@ export default function PopularMovies() {
 
   },[dispatch]);
 
-  const dispacth_popular = useDispatch();
-
-  useEffect(()=>{
-    dispacth_popular(fetchingPopularMovieData());
-
-    return ()=>{
-      dispatch(resetPopularData());
-    }
-  },[dispacth_popular]);
 
   const {trending} = useSelector((state)=>state);
   const {genre} = useSelector((state)=>state.genre);

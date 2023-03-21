@@ -3,6 +3,7 @@ import './component.css'
 import { Base_URL } from '../credConfig'
 import { TrendingUp } from '@mui/icons-material'
 import { Tooltip } from '@mui/material'
+import { useSelector } from 'react-redux'
 
 export default function TrendingMovie({trendMovie}) {
 

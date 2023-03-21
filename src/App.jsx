@@ -6,6 +6,8 @@ import MovieDetails from './container/MovieDetails'
 import Layout from './components/Layout'
 import { useDispatch } from 'react-redux'
 import { fetchingGenre } from './redux/GenreSlice'
+import InfiniteMovie from './container/InfiniteMovie'
+import { fetchingPopularMovieData, resetPopularData } from './redux/PopularSlice'
 
 function App() {
 
@@ -15,6 +17,16 @@ function App() {
     dispatch(fetchingGenre());
   },[dispatch]);
 
+  const dispatch_popular = useDispatch();
+
+  useEffect(()=>{
+    dispatch_popular(fetchingPopularMovieData());
+
+    return ()=>{
+      dispatch(resetPopularData());
+    }
+  },[dispatch_popular]);
+
   return (
     <div className='App'>
     <BrowserRouter>
@@ -22,6 +34,7 @@ function App() {
         <Routes>
           <Route path='/' element={<PopularMovies/>} />
           <Route path='/movie/:id' element={<MovieDetails/>}/>
+          <Route path='/movie/more' element={<InfiniteMovie/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>
