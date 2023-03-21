@@ -40,15 +40,12 @@ export default function InfiniteMovieList() {
     }
   },[dispatch_moviebyGenre, selectedGenre])
 
-  
-  const debouncedLoadMore = debounce(() => {
+
+
+  const loadMore = () =>{
     if (movieByGenre.hasMore) {
       dispatch_moviebyGenre(fetchingMovieByGenre({ selectedGenre : selectedGenre, page: movieByGenre.page + 1 }));
     }
-  }, 500);
-
-  const loadMore = () =>{
-    debouncedLoadMore();
   };
   return (
     <div className='infinite-movie-wrapper'>
