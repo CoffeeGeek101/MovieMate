@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = {
     results : [],
+    hasMore : false,
     page :  0,
     totalResult : 0,
     totalPage : 0,
-    hasMore : true,
     isFetching : false
 }
 
@@ -36,5 +36,5 @@ const movieByGenre = createSlice({
     }
 });  
 
-export const {fetchingMovieByGenre,fetchedMovieByGenre,resetFetchingByGenre} = movieByGenre.actions;
+export const {fetchingMovieByGenre, fetchedMovieByGenre, resetFetchingByGenre} = movieByGenre.actions;
 export default movieByGenre.reducer;

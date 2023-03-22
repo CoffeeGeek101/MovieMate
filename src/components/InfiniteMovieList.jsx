@@ -33,7 +33,7 @@ export default function InfiniteMovieList() {
   useEffect(()=>{
     if(selectedGenre){
       // console.log(selectedGenre)
-      dispatch_moviebyGenre(fetchingMovieByGenre({selectedGenre : selectedGenre, page : movieByGenre.page + 1}))
+      dispatch_moviebyGenre(fetchingMovieByGenre({selectedGenre : selectedGenre, page : 1}))
     }
     return () =>{
       dispatch_moviebyGenre(resetFetchingByGenre());
@@ -42,11 +42,19 @@ export default function InfiniteMovieList() {
 
 
 
-  const loadMore = () =>{
-    if (movieByGenre.hasMore) {
-      dispatch_moviebyGenre(fetchingMovieByGenre({ selectedGenre : selectedGenre, page: movieByGenre.page + 1 }));
+  const loadMore = () => {
+    if (movieByGenre.page < 20) {
+      // console.log(movieByGenre.hasMore)
+     dispatch_moviebyGenre(fetchingMovieByGenre({selectedGenre : selectedGenre, page : movieByGenre.page + 1}))
     }
   };
+
+  useEffect(()=>{
+    if(movieByGenre.page < 20){
+      loadMore();
+    }
+  },[movieByGenre.page])
+
   return (
     <div className='infinite-movie-wrapper'>
       <div className='genre-holder' style={{display:'flex', gap:'20px'}}>
@@ -68,7 +76,6 @@ export default function InfiniteMovieList() {
         next={loadMore}
         hasMore={movieByGenre.hasMore}
         loader={<Loader/>}
-        // style={{overflow:'hidden', flex:'8', marginLeft:'100px'}}
         className="scroll"
       >
       {
