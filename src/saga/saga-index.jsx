@@ -7,6 +7,7 @@ import TMDB_API from '../lib/api';
 import { fetchedGenreData, fetchingGenre } from '../redux/GenreSlice';
 import { fetchedTrendingData, fetchingTrendingData } from '../redux/TrendingSlice';
 import { fetchedPopularMovieData, fetchingPopularMovieData } from '../redux/PopularSlice';
+import { fetchedMovieByGenre, fetchingMovieByGenre } from '../redux/MovieByGenreSlice';
 
 // creating the instance of the API class
 const  myAPI = new TMDB_API(API_KEY);
@@ -41,12 +42,23 @@ function* fetchPopularMovies(action){
     );
 }
 
+function* fetchMovieByGenre(action){
+    const selectedGenreID = action.payload.selectedGenre;
+    const pageNumber = action.payload.page;
+    // console.log(pageNumber)
+    const idString = String(selectedGenreID.selectedGenre)
+    // console.log(idString);
+    yield put(fetchedMovieByGenre(yield call(myAPI.getSelectedGenreMovie, idString, pageNumber))
+    );
+}
+
 // This is the watcher function which listens to the `fetchingSearch` action, which then 
 // triggers the `fetchedSearchData` action. 
 export default function* watcherSaga(){
     yield all ([
         yield takeLatest(fetchingTrendingData.type, fetchTrendingMovies),
         yield takeEvery(fetchingPopularMovieData.type, fetchPopularMovies),
+        yield takeLatest(fetchingMovieByGenre.type, fetchMovieByGenre),
         yield takeEvery(fetchingGenre.type, fetchGenreData),
         yield takeLatest(fetchingSearch.type, fetchSearchData)
     ])

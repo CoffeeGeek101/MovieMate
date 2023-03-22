@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = {
     results : [],
-    hasMore : true,
     page : 0,
     totalResults : 0,
     totalPages : 0,
@@ -22,8 +21,7 @@ const popularSlice = createSlice({
         fetchedPopularMovieData : (state,action) =>{
             return{
                 ...state,
-                results : [...state.results, ...action.payload.results],
-                hasMore : action.payload.page < action.payload.total_pages,
+                results : action.payload.results,
                 page : action.payload.page,
                 totalPages : action.payload.total_pages,
                 totalResults : action.payload.total_results,

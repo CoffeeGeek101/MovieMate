@@ -5,6 +5,8 @@ import createSagaMiddleware from "@redux-saga/core";
 import genreReducer from './GenreSlice';
 import trendingReducer from './TrendingSlice';
 import popularReducer from './PopularSlice';
+import movieByGenreReducer from './MovieByGenreSlice';
+import selectedMovieGenreReducer from './SetGenreSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,6 +17,8 @@ const store = configureStore({
         genre : genreReducer,
         trending : trendingReducer,
         popular : popularReducer,
+        movieByGenre : movieByGenreReducer,
+        selectedGenre : selectedMovieGenreReducer
     },
     middleware : (getDefaultMiddleware) =>{
         return getDefaultMiddleware({thunk : false}).prepend(sagaMiddleware);

@@ -4,14 +4,17 @@ import React from 'react';
 import { Base_URL } from '../credConfig';
 import './component.css';
 import { genreData } from '../lib/helper';
+import { Link } from 'react-router-dom';
 
 export default function MovieList({popularMovie,genres}) {
-  console.log(popularMovie)
+  // console.log(popularMovie)
   return (
     <div className='popular-pop-wrapper'>
       <div className='popular-header'>
         <div className='popular-title'>Popcorn Worthy. &#127871;</div>
-        <p>See more</p>
+        <Link to={'/movie/more'}>
+        <p className='more-movie-link'>See more.</p>
+        </Link>
       </div>
       <div className='popular-hero-content'>
         <div className='popular-eye-catcher'>

@@ -5,6 +5,8 @@ import { createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { styled } from '@mui/system';
 import SearchResult from '../container/SearchResult';
+import Footer from './Footer';
+import { Margin } from '@mui/icons-material';
 
 
 // This is a theme or we can see it as a templet for the UI, which helps it make consist over the routing pages 
@@ -27,6 +29,7 @@ export default function Layout({children}) {
           <SearchResult/>
           </div>
         {children}
+        <Footer/>
     </ThemeProvider>
   )
 }

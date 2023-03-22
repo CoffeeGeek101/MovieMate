@@ -40,4 +40,11 @@ export default class TMDB_API {
         return res.json();
     }
 
+    getSelectedGenreMovie = async(idString, page) => {
+        const res = await fetch(
+            `${this.baseURL}/discover/movie?api_key=${this.apiKey}&with_genres=${idString}&page=${page}`
+        )
+        return res.json();
+    }
+
 }
