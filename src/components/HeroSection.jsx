@@ -4,7 +4,7 @@ import { Base_URL } from '../credConfig';
 import {genreData} from '../lib/helper';
 
 export default function HeroSection({trendMovie, genres}) {
-  console.log(genres)
+  // console.log(genres)
   return (
     <div className='hero-wrapper'>
       <div className='top-hero-wrapper'>

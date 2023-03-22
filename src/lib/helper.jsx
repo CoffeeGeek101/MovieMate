@@ -5,5 +5,5 @@ export function genreData(genre, genIds){
         return result;
     },result);
 
-    return genIds.map((id)=> (<div>{structGen[id]}</div>))
+    return genIds.slice(0,3).map((id)=> (<div>{structGen[id]}</div>))
 }
