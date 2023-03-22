@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import HeroSection from '../components/HeroSection'
+import MoodSection from '../components/MoodSection'
 import MovieList from '../components/MovieList'
 import TrendingMovie from '../components/TrendingMovie'
 import { fetchingPopularMovieData, resetPopularData } from '../redux/PopularSlice'
@@ -33,6 +34,7 @@ export default function PopularMovies() {
     </div>
     <div>
       <MovieList popularMovie = {popular} genres={genre}/>
+      <MoodSection trendMovie= {trending} genres={genre}/>
     </div>
     </>
   )

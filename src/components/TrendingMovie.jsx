@@ -4,6 +4,7 @@ import { Base_URL } from '../credConfig'
 import { TrendingUp } from '@mui/icons-material'
 import { Tooltip } from '@mui/material'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 export default function TrendingMovie({trendMovie}) {
 
@@ -17,6 +18,7 @@ export default function TrendingMovie({trendMovie}) {
           {
             trendMovie.results.slice(0,11)
             .map((item)=>(
+              <Link to={`/movie/${item.id}`} style={{textDecoration:'none'}}>
               <div className='trending-movie' key={item.id} style={{backgroundImage:`url(${Base_URL}/w1280/${item.backdrop_path})`}}>
                 <div className='trending-des'>
                  <TrendingUp className='trending-logo'/>
@@ -29,6 +31,7 @@ export default function TrendingMovie({trendMovie}) {
                  <div className='trending-movie-rating'><span>{item.vote_average.toFixed(1)}/10</span></div>
                 </div>
               </div>
+              </Link>
             ))
           }
         </div>
