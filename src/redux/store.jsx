@@ -7,6 +7,7 @@ import trendingReducer from './TrendingSlice';
 import popularReducer from './PopularSlice';
 import movieByGenreReducer from './MovieByGenreSlice';
 import selectedMovieGenreReducer from './SetGenreSlice';
+import movieDetailReducer from './DetailSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,7 +19,8 @@ const store = configureStore({
         trending : trendingReducer,
         popular : popularReducer,
         movieByGenre : movieByGenreReducer,
-        selectedGenre : selectedMovieGenreReducer
+        selectedGenre : selectedMovieGenreReducer,
+        movieDetail : movieDetailReducer
     },
     middleware : (getDefaultMiddleware) =>{
         return getDefaultMiddleware({thunk : false}).prepend(sagaMiddleware);
