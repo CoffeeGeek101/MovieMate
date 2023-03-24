@@ -1,4 +1,6 @@
-
+*{
+    font-family: 'Poppins';
+}
 .search-holder{
     position: relative;
     z-index: 999;
@@ -734,6 +736,121 @@
 /* DETAIL PAGE STYLES --------------------------------------- */
 
 
+.detail-wrapper{
+    margin-top: 30px;
+    /* overflow: hidden; */
+    padding: 10px;
+    /* border-radius: 20px; */
+}
+
 .details{
-    
+    min-width: 1280px;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.detail-content{
+    border-radius: 10px;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   background-color: #00000053;
+   background: linear-gradient(180deg,rgba(255, 255, 255, 0.058), rgb(18, 18, 18));
+   height: 100%;
+   padding: 30px 25px;
+   position: relative;
+   /* display: flex; */
+   /* box-shadow: inset 0px 40px 40px rgba(20, 20, 20, 0.788); */
+}
+
+.detail-hero{
+    width: 500px;
+    height: 730px;
+    background-size: cover;
+    background-position: top;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.618);
+    /* flex: 1; */
+}
+
+.detail-hero-shadow{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 0.058), rgba(0, 0, 0, 0.901));
+}
+
+.detail-content-doc{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.dummy-poster-div{
+    flex: 1;
+    max-width: 520px;
+}
+.deatil-intro-holder{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-part-i{
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-title{
+   font-size: 40px;
+   font-weight: 700;
+}
+
+.detail-utility-intro{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.detail-rating{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star{
+    font-size: 18px !important;
+    color: rgb(255, 204, 0);
+}
+
+.rating-star{
+    font-size: 14px;
+}
+
+.runtime{
+    font-size: 14px;
+}
+
+.detail-genre-holder{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.release-detail{
+    font-size: 14px;
+}
+
+.detail-des{
+    font-size: 15px;
+    font-weight: 300;
 }

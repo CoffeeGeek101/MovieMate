@@ -8,6 +8,9 @@ const initial_state = {
     backdrop : '',
     poster :'',
     prod : [],
+    star : 0,
+    release_date : '',
+    runtime : 0,
     isFetching : false
 }
 
@@ -30,7 +33,10 @@ const detailSLice = createSlice({
                 homepage : action.payload.homepage,
                 backdrop : action.payload.backdrop_path,
                 poster : action.payload.poster_path,
-                prod : action.payload.production_companies
+                prod : action.payload.production_companies,
+                star : action.payload.vote_average,
+                release_date : action.payload.release_date,
+                runtime : action.payload.runtime
             }
         },
         resetMovieDetail : (state) => {
