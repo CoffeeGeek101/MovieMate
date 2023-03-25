@@ -53,5 +53,12 @@ export default class TMDB_API {
         )
         return res.json();
     }
+    
+    getActors = async (id) => {
+        const res = await fetch(
+            `${this.baseURL}/movie/${id}/credits?api_key=${this.apiKey}`
+        )
+        return res.json();
+    }
 
 }

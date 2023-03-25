@@ -760,8 +760,6 @@
    height: 100%;
    padding: 30px 25px;
    position: relative;
-   /* display: flex; */
-   /* box-shadow: inset 0px 40px 40px rgba(20, 20, 20, 0.788); */
 }
 
 .detail-hero{
@@ -794,13 +792,15 @@
 
 .dummy-poster-div{
     flex: 1;
-    max-width: 520px;
+    
 }
-.deatil-intro-holder{
+.detail-intro-holder{
     flex: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding-left: 100px;
+    gap: 30px;
+    margin-top: 150px;
 }
 
 .detail-part-i{
@@ -854,3 +854,53 @@
     font-size: 15px;
     font-weight: 300;
 }
+
+.actor-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.actor-header{
+    font-size: 20px;
+}
+
+.actor-wrapper{
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.actor{
+    width: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.actor-profile{
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+}
+
+.actor-name{
+    font-size: 12px;
+    width: 100px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.actor-character{
+    font-size: 10px;
+    width: 100px;
+    white-space: nowrap;
+    margin-top: -6px;
+}
+

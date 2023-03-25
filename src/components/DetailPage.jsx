@@ -4,8 +4,9 @@ import { Base_URL } from '../credConfig';
 import { Star } from '@mui/icons-material';
 import { runtime_formatter } from '../lib/helper';
 
-export default function DetailPage({details}) {
+export default function DetailPage({details, actorlist}) {
   console.log(details)
+  console.log(actorlist)
   const release = details.release_date.slice(0,4);
   const rating = details.star.toFixed(1);
   return (
@@ -31,7 +32,7 @@ export default function DetailPage({details}) {
                     <div className='detail-genre-holder'>
                     {
                       details.genres.map((genre)=>(
-                        <p className='detail-genre'>{genre.name}.</p>
+                        <p key={genre.id} className='detail-genre'>{genre.name}.</p>
                       ))
                     }
                     </div>
@@ -40,7 +41,20 @@ export default function DetailPage({details}) {
                 </div>
                 <p className='detail-des'>{details.overview}</p>
               </div>
-              <div></div>
+              <div className='actor-container'>
+                <p className='actor-header'>Actors.</p>
+                <div className='actor-wrapper'>
+                {
+                  actorlist.cast.slice(0,6).map((actor)=>(
+                    <div className='actor'>
+                      <div className='actor-profile' style={{backgroundImage : `url(${Base_URL}/w500/${actor.profile_path})`}}></div>
+                      <p className='actor-name'>{actor.name}</p>
+                      <p className='actor-character'>{actor.character}</p>
+                    </div>
+                  ))
+                }
+                </div>
+              </div>
             </div>
           </div>
         </div>

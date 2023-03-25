@@ -8,6 +8,7 @@ import popularReducer from './PopularSlice';
 import movieByGenreReducer from './MovieByGenreSlice';
 import selectedMovieGenreReducer from './SetGenreSlice';
 import movieDetailReducer from './DetailSlice';
+import actorReducer from './ActorSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,7 +21,8 @@ const store = configureStore({
         popular : popularReducer,
         movieByGenre : movieByGenreReducer,
         selectedGenre : selectedMovieGenreReducer,
-        movieDetail : movieDetailReducer
+        movieDetail : movieDetailReducer,
+        actors : actorReducer
     },
     middleware : (getDefaultMiddleware) =>{
         return getDefaultMiddleware({thunk : false}).prepend(sagaMiddleware);
