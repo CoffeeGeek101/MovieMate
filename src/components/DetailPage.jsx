@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './component.css'
 import { Base_URL } from '../credConfig';
 import { Star } from '@mui/icons-material';
 import { runtime_formatter } from '../lib/helper';
+import { useLocation } from 'react-router-dom';
 
 export default function DetailPage({details, actorlist}) {
   console.log(details)
   console.log(actorlist)
+
+  // const { state } = useLocation();
+  // useEffect(() => {
+  //   window.scrollTo(0, state?.scrollTop || 140);
+  // }, [state]);
+
   const release = details.release_date.slice(0,4);
   const rating = details.star.toFixed(1);
   return (

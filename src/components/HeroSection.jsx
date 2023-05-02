@@ -41,12 +41,14 @@ export default function HeroSection({trendMovie, genres}) {
                         }
                       </div>
                   </div>
+                  <Link to={`/movie/${item.id}`} style={{color: '#fff', textDecoration:'none'}}>
                   <div className='get-dtl-btn'>
                     Get Details
                   </div>
+                  </Link>
                 </div>  
                 <div>
-                <Link to={`/movie/${item.id}`} style={{textDecoration:'none'}}>
+                <Link to={`/movie/${item.id}`}  style={{textDecoration:'none'}}>
                 <p className='hero-title'>{item.title}</p>
                 </Link>
                 <div className='hero-detail'>{item.overview}</div>

@@ -7,18 +7,18 @@ import './component.css'
 import { KeyboardDoubleArrowRight } from '@mui/icons-material';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from './Loader';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
  
 
 export default function InfiniteMovieList() {
 
   const dispatch = useDispatch();
   const dispatch_moviebyGenre = useDispatch();
-  const { state } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, state?.scrollTop || 0);
-  }, [state]);
+  
+  // const { state } = useLocation();
+  // useEffect(() => {
+  //   window.scrollTo(0, state?.scrollTop || 0);
+  // }, [state]);
 
   const {genre} = useSelector((state)=>state.genre);
   const selectedGenre = useSelector((state)=>state.selectedGenre);
@@ -96,7 +96,9 @@ export default function InfiniteMovieList() {
             <div 
             className={`overlay ${isOverlay === item.id ? 'active-overlay' : ''}`}
             >
+              <Link to={`/movie/${item.id}`}>
               <button className='get-more-details'>Get Details</button>
+              </Link>
             </div>
           </div>
         ))

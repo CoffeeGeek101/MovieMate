@@ -6,7 +6,7 @@ import './component.css';
 import { genreData } from '../lib/helper';
 import { Link } from 'react-router-dom';
 
-export default function MovieList({popularMovie,genres}) {
+export default function MovieList({popularMovie,genres, scroll}) {
   // console.log(popularMovie)
   return (
     <div className='popular-pop-wrapper'>
@@ -30,7 +30,7 @@ export default function MovieList({popularMovie,genres}) {
       <div className='popular-content'>
         {
           popularMovie.results.slice(0,18).map((item)=>(
-            <Link to={`movie/${item.id}`} style={{textDecoration:'none', color: '#fff'}}>
+            <Link to={{pathname :`movie/${item.id}`}} style={{textDecoration:'none', color: '#fff'}}>
             <div key={item.id} className='content-cover' style={{backgroundImage:`url(${Base_URL}/w1280/${item.backdrop_path})`}}>
               <div className='popular-des'>
                  <p className='popular-logo'>&#127871;</p>

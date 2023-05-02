@@ -6,7 +6,7 @@ import { Tooltip } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-export default function TrendingMovie({trendMovie}) {
+export default function TrendingMovie({trendMovie, scroll}) {
 
   return (
     <div className='trending-wrapper'>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Base_URL } from '../credConfig'
 
-export default function MoodSection({trendMovie, genres}) {
+export default function MoodSection({trendMovie, genres, scroll}) {
     // console.log(trendMovie)
     // console.log(genres)
   return (
@@ -26,7 +26,7 @@ export default function MoodSection({trendMovie, genres}) {
             }
             <div className='mood-content'>
                 <p className='mood-title'>Match your <span>Mood </span>with Genres.</p>
-                <Link to={{pathname:'/movie/more', state : {scrollTop: 0}}}>
+                <Link to={{pathname:'/movie/more', state : {scrollTop : 0}}}>
                 <button className='mood-btn'>Explore</button>
                 </Link>
             </div>

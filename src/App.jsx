@@ -8,6 +8,13 @@ import { useDispatch } from 'react-redux'
 import { fetchingGenre } from './redux/GenreSlice'
 import InfiniteMovie from './container/InfiniteMovie'
 import { fetchingPopularMovieData, resetPopularData } from './redux/PopularSlice'
+// import ScrollRestoration from './ScrollManagement'
+
+
+
+
+
+
 
 function App() {
 
@@ -30,6 +37,7 @@ function App() {
   return (
     <div className='App'>
     <BrowserRouter>
+    {/* <ScrollRestoration> */}
       <Layout>
         <Routes>
           <Route path='/' element={<PopularMovies/>} />
@@ -37,6 +45,7 @@ function App() {
           <Route path='/movie/more' element={<InfiniteMovie/>}/>
         </Routes>
       </Layout>
+      {/* </ScrollRestoration> */}
     </BrowserRouter>
     </div>
   )
