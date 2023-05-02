@@ -8,6 +8,7 @@ import Downshift from 'downshift'
 import './component.css';
 import {Base_URL} from '../credConfig';
 import { genreData } from '../lib/helper'
+import { Link } from 'react-router-dom'
 // import { genreData } from '../lib/helper'
 
 // This component will dispatch all the action or the additional options(payload) for search to the reducer.
@@ -25,9 +26,13 @@ const handleSearch = (e) =>{
     // payload for this reducer, but we are using this to watch on the `fetchedSearchData` reducer to trigger, 
     // so, we need to pass the event value to give the payload to the `fetchedSearchData` reducer.
     dispatch(fetchingSearch(e.target.value));
+    if (e.key === 'Enter' || e.type === 'submit') {
+      // reload the page
+      window.location.reload();
+    }
 }
   return (
-    <Downshift>
+    <Downshift onSelect={() => window.location.reload()}>
       {({
         getInputProps,
         getItemProps,
@@ -35,7 +40,7 @@ const handleSearch = (e) =>{
         isOpen,
         highlightedIndex,
         selectedItem,
-        inputValue
+        inputValue,
       })=> 
       <div className='search-holder'>
       <TextField
@@ -66,9 +71,9 @@ const handleSearch = (e) =>{
                 !inputValue ||
                 item.title.toLowerCase().includes(inputValue.toLowerCase())
               ).map((item,index)=>(
-                
+                <Link to={`/movie/${item.id}`} style={{textDecoration:'none', color:'#fff'}}>
                 <div className='search-items-container' {...getItemProps({
-                  item,
+                  item : '',
                   key : item.id,
                   selected : highlightedIndex === index,
                 })}>
@@ -87,6 +92,7 @@ const handleSearch = (e) =>{
                       </div>
                   </div>
                 </div>
+                </Link>
               )
               )
               

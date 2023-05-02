@@ -28,8 +28,8 @@ export default function Layout({children}) {
           <h1 className='main-logo'>MovieMate</h1>
           <SearchResult/>
           </div>
-        {children}
-        <Footer/>
+          {children}
+          <Footer/>
     </ThemeProvider>
   )
 }
